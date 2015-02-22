@@ -1,0 +1,8 @@
+<html>
+<head></head>
+<body>
+<h1>this is the main heading</h1>
+<p>what did you ask</p>
+<p>I don't know</p>
+<p>this is an example of a plain html document saved as a text</p>
+</html>

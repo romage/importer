@@ -1,0 +1,5 @@
+C:\Projects\test\TNS.Importer\TNS.Importer.Interfaces\bin\Debug\TNS.Importer.Interfaces.dll
+C:\Projects\test\TNS.Importer\TNS.Importer.Interfaces\bin\Debug\TNS.Importer.Interfaces.pdb
+C:\Projects\test\TNS.Importer\TNS.Importer.Interfaces\obj\Debug\TNS.Importer.Interfaces.csprojResolveAssemblyReference.cache
+C:\Projects\test\TNS.Importer\TNS.Importer.Interfaces\obj\Debug\TNS.Importer.Interfaces.dll
+C:\Projects\test\TNS.Importer\TNS.Importer.Interfaces\obj\Debug\TNS.Importer.Interfaces.pdb

@@ -1,0 +1,59 @@
+﻿<div class="panel">
+    <main-menu></main-menu>
+    <div class="panel-heading panel-primary panel-title">
+        <h1>this is a view (for the homepage)</h1>
+    </div>
+    <div class="panel-body">
+        <div class="col-md-12">
+
+            <div class="form-group">
+                <label for="userName">User name:</label>
+                <input type="text" name="userName" ng-model="project.username" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="projectName">Project:</label>
+                <input type="text" name="projectName" ng-model="project.projectName" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="uploadMultiple">Upload multiple file:</label>
+                <input type="checkbox" name="uploadMultiple" ng-model="multiple">
+            </div>
+
+            <div class="form-group">
+                <label for="dropFile" style="float: left">Drop File:</label>
+                <div ng-file-drop ng-file-select ng-model="files" class="form-control drop-box"
+                     drag-over-class="dragover" ng-multiple="true" allow-dir="true"
+                     accept="image/*,application/xlsx">Drop pdfs or images here or click to upload</div>
+                <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                <ul>
+                    <li ng-repeat="f in files" style="font:smaller">{{f.name}}</li>
+                </ul>
+            </div>
+
+            <div style="clear: both"><br /></div>
+
+            <div class="form-group">
+                <label for="selectFile">watching model (ng-file-select):</label>
+                <div class="button form-control" name="selectFile" ng-file-select ng-model="files" ng-multiple="multiple"></div>
+            </div>
+
+
+            <!--<div class="button form-control" name="selectFile" ng-file-select ng-file-change="upload(files)" ng-multiple="multiple"></div>-->
+            <progressbar max="max" value="progressPercentage"></progressbar>
+            <progressbar max="100" value="progressPercentage"><span style="color:black; white-space:nowrap;">{{progressPercentage}} / {{100}}</span></progressbar>
+
+
+            <div style="clear: both"><br /></div>
+
+
+            <div class="form-group">
+                <button value="upload" ng-click="upload(files)" class="btn btn-primary">Submit product scores</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</div>
