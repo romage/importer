@@ -42,12 +42,13 @@ namespace TNS.Importer.WebApi.Controllers
                 product.SystemFileName = newFileName;
                 _svc.ProcessUploadedFile(product);
             }
+            return RedirectToAction("Product", product);
+        }
 
-            
 
-          
-          
-            return View();
+        public ActionResult Product(Product product)
+        {
+            return View(product);
         }
 
         private bool SaveFile(HttpPostedFileBase file, out string originalFileName, out string newFilename)

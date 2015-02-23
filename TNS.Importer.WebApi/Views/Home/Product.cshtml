@@ -1,0 +1,80 @@
+﻿@model TNS.Importer.Models.Product
+
+@{
+    ViewBag.Title = "Product";
+}
+
+<h2>Product</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OriginalFileName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OriginalFileName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SystemFileName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SystemFileName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Scorer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Scorer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScorerEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScorerEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfScoreInput)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfScoreInput)
+        </dd>
+        @if (Model.Scores.Any())
+        {
+            <ul>
+                @foreach (var score in Model.Scores)
+                {
+                    <li>@score.ScoreName :: @score.ScoreValue</li>
+                }
+            </ul>
+        }
+
+    </dl>
+
+
+
+
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

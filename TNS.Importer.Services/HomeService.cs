@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TNS.Importer.Interfaces;
 using TNS.Importer.Models;
 using TNS.Importer.Data;
+using System.IO;
 
 namespace TNS.Importer.Services
 {
@@ -22,16 +23,32 @@ namespace TNS.Importer.Services
         public Product ProcessUploadedFile(Product product)
         {
             product.DateOfScoreInput = DateTime.Today;
-            product.ProcessState = ProcessStateEnum.FinishedProcessing;
+            product.ProcessState = ProcessStateEnum.Processing;
 
             //TODO: Move to ioc container, and constructor
 
-            FileLoader fl = new FileLoader();
-            ExcelParserViaDomService parser = new ExcelParserViaDomService(fl);
-            Product alt = parser.Parse(product);
-            _repo.SaveProduct(product);
-            
+            try
+            {
+                FileLoader fl = new FileLoader();
+                ExcelParserViaDomService parser = new ExcelParserViaDomService(fl);
+                Product alt = parser.Parse(product);
+                product.ProcessState = ProcessStateEnum.FinishedProcessing;
+                _repo.SaveProduct(product);
+            }
+            catch (Exception ex)
+            {
+                moveFileToError(product);
+                //logError();
+                throw ex;
+            }
             return product;
+        }
+
+        private void moveFileToError(Product product)
+        {
+            FileInfo fi = new FileInfo(product.SystemFileName);
+            string newLocation = fi.FullName.Replace(ConfigHelper.ToBeProcessedPath(), ConfigHelper.UnableToProcessPath()); 
+            fi.MoveTo(newLocation);
         }
 
 
