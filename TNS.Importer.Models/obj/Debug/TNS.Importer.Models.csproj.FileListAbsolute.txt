@@ -1,0 +1,5 @@
+C:\Projects\test\importer\TNS.Importer.Models\bin\Debug\TNS.Importer.Models.dll
+C:\Projects\test\importer\TNS.Importer.Models\bin\Debug\TNS.Importer.Models.pdb
+C:\Projects\test\importer\TNS.Importer.Models\obj\Debug\TNS.Importer.Models.dll
+C:\Projects\test\importer\TNS.Importer.Models\obj\Debug\TNS.Importer.Models.pdb
+C:\Projects\test\importer\TNS.Importer.Models\obj\Debug\TNS.Importer.Models.csprojResolveAssemblyReference.cache

@@ -61,9 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Acceptance\FileHandling.cs" />
+    <Compile Include="Acceptance\FileParsingTests.cs" />
     <Compile Include="Acceptance\FileLoaderTests.cs" />
     <Compile Include="Acceptance\Xml.cs" />
+    <Compile Include="Failure\FileParsingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
