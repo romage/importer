@@ -21,6 +21,16 @@ namespace TNS.Importer.Services
 
         public Product ProcessUploadedFile(Product product)
         {
+            product.DateOfScoreInput = DateTime.Today;
+            product.ProcessState = ProcessStateEnum.FinishedProcessing;
+
+            //TODO: Move to ioc container, and constructor
+
+            FileLoader fl = new FileLoader();
+            ExcelParserViaDomService parser = new ExcelParserViaDomService(fl);
+            Product alt = parser.Parse(product);
+            _repo.SaveProduct(product);
+            
             return product;
         }
 

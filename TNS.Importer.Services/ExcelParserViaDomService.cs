@@ -19,11 +19,10 @@ namespace TNS.Importer.Services
         }
         IFileLoader _fileLoader;
 
-        public Product Parse(string physicalPath)
+        public Product Parse(Product product)
         {
-            var returnProduct = new Product();
-            _fileLoader.checkForFileErrorsFile(physicalPath);
-            using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(physicalPath, false))
+            _fileLoader.checkForFileErrorsFile(product.SystemFileName);
+            using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(product.SystemFileName, false))
             {
                 WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
                 foreach (WorksheetPart wsp in workbookPart.WorksheetParts)
@@ -37,11 +36,11 @@ namespace TNS.Importer.Services
                         // workbook needs to be passed through as spreadsheet strings are not stored in the cell, but a separate lookup table.
                         s.ScoreName = row.getScoreName(workbookPart);
                         s.ScoreValue = row.getScoreValue();
-                        returnProduct.Scores.Add(s);
+                        product.Scores.Add(s);
                     }
                 }
             }
-            return returnProduct;
+            return product;
         }
 
 

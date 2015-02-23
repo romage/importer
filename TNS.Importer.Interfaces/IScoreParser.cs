@@ -9,6 +9,6 @@ namespace TNS.Importer.Interfaces
 {
     public interface IScoreParser
     {
-        Product Parse(string physicalPath);
+        Product Parse(Product product);
     }
 }

@@ -45,16 +45,19 @@ namespace TNS.Importer.Tests.Acceptance
         public void XlsxFileParsedViaDomReturnsProduct()
         {
             ExcelParserViaDomService domParser = new ExcelParserViaDomService(new FileLoader());
-            var ret = domParser.Parse(_physicalFileName);
+            Product product = new Product();
+            product.SystemFileName = "Book1.xlsx";
+            var ret = domParser.Parse(product);
             Assert.IsType<Product>(ret);
+            Assert.True(ret.Scores.Count > 0);
         }
 
 
         public class ExcelParserViaSax : IScoreParser
         {
-            public Product Parse(string physicalPath)
+            public Product Parse(Product product)
             {
-                using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(physicalPath, false))
+                using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(product.SystemFileName, false))
                 {
 
 
@@ -89,9 +92,9 @@ namespace TNS.Importer.Tests.Acceptance
         }
         public class ExcelParserViaOld : IScoreParser
         {
-            public Product Parse(string physicalPath)
+            public Product Parse(Product product)
             {
-                string conStr = "Provider=Microsoft.ACE.OLEDB.12.0;data source='" + physicalPath + "';Extended Properties=\"Excel 12.0;HDR=NO;IMEX=1\" ";
+                string conStr = "Provider=Microsoft.ACE.OLEDB.12.0;data source='" + product.SystemFileName + "';Extended Properties=\"Excel 12.0;HDR=NO;IMEX=1\" ";
                 string cmd = "select * from [sheet1$]";
                 var dt = new DataTable();
 

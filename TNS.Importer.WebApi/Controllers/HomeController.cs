@@ -12,6 +12,7 @@ namespace TNS.Importer.WebApi.Controllers
 {
     public class HomeController : Controller
     {
+        HomeService _svc = new HomeService();
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
@@ -32,31 +33,32 @@ namespace TNS.Importer.WebApi.Controllers
             if (!ModelState.IsValid)
                 return View(product);
 
+            string originalFileName;
+            string newFileName;
+  
+            if (SaveFile(file, out originalFileName, out newFileName))
+            {
+                product.OriginalFileName = originalFileName;
+                product.SystemFileName = newFileName;
+                _svc.ProcessUploadedFile(product);
+            }
+
+            
+
+          
+          
+            return View();
+        }
+
+        private bool SaveFile(HttpPostedFileBase file, out string originalFileName, out string newFilename)
+        {
             var physpath = Server.MapPath("/Uploads/ToBeProcessed/");
             FileInfo fi = new FileInfo(file.FileName);
             string systemFileName = string.Concat(physpath, Guid.NewGuid(), fi.Extension);
             file.SaveAs(systemFileName);
-
-            FileLoader fl = new FileLoader();
-            ExcelParserViaDomService parser = new ExcelParserViaDomService(fl);
-            Product newProduct =  parser.Parse(systemFileName);
-
-            //TODO: refactor this depending on whether product data is got from the spreadsheet. may be better to pass in the product to the parser,  or just get the scores out of the spreadsheet
-            newProduct.DateOfScoreInput = DateTime.Today;
-            //newProduct.ProcessState = ProcessStateEnum.ToBeProcessed;
-            newProduct.OriginalFileName = fi.Name;
-            newProduct.SystemFileName = systemFileName;
-            newProduct.Scorer = product.Scorer;
-            newProduct.ProductName = product.ProductName;
-            newProduct.ScorerEmail = product.ScorerEmail;
-
-            newProduct.ProcessState = ProcessStateEnum.FinishedProcessing;
-            
-            //TODO: Move to ioc container, and constructor
-            HomeService hs = new HomeService();
-            hs.SaveProduct(newProduct);
-          
-            return View();
+            originalFileName = file.FileName;
+            newFilename = systemFileName;
+            return true;
         }
 
 
