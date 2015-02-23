@@ -17,23 +17,36 @@ namespace TNS.Importer.Services
             return ret;
         }
 
-        public static string ToBeProcessedPath()
+        public static string ToBeProcessedPath
         {
-            return TryGetVal<string>("ToBeProcessedPath");
+            get
+            {
+                return TryGetVal<string>("ToBeProcessedPath");
+            }
+
         }
-        public static string UnableToProcessPath()
+        public static string UnableToProcessPath
         {
-            return TryGetVal<string>("UnableToProcess");
+            get
+            {
+                return TryGetVal<string>("UnableToProcess");
+            }
         }
-        public static string ProcessedPath()
+        public static string ProcessedPath
         {
-            return TryGetVal<string>("ProcessedPath");
+            get
+            {
+                return TryGetVal<string>("ProcessedPath");
+            }
         }
-        public static string UploadFileRoot()
+        public static string UploadFileRoot
         {
-            return TryGetVal<string>("UploadFileRoot");
+            get
+            {
+                return TryGetVal<string>("UploadFileRoot");
+            }
         }
-        
+
 
 
     }

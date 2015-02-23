@@ -33,6 +33,7 @@ namespace TNS.Importer.Services
                 ExcelParserViaDomService parser = new ExcelParserViaDomService(fl);
                 Product alt = parser.Parse(product);
                 product.ProcessState = ProcessStateEnum.FinishedProcessing;
+                product.CurrentProcessingFolder = ConfigHelper.ProcessedPath;
                 _repo.SaveProduct(product);
             }
             catch (Exception ex)
@@ -46,8 +47,8 @@ namespace TNS.Importer.Services
 
         private void moveFileToError(Product product)
         {
-            FileInfo fi = new FileInfo(product.SystemFileName);
-            string newLocation = fi.FullName.Replace(ConfigHelper.ToBeProcessedPath(), ConfigHelper.UnableToProcessPath()); 
+            FileInfo fi = new FileInfo(product.SystemFileNameWithExtension);
+            string newLocation = fi.FullName.Replace(ConfigHelper.ToBeProcessedPath, ConfigHelper.UnableToProcessPath); 
             fi.MoveTo(newLocation);
         }
 

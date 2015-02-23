@@ -21,8 +21,9 @@ namespace TNS.Importer.Services
 
         public Product Parse(Product product)
         {
-            _fileLoader.checkForFileErrorsFile(product.SystemFileName);
-            using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(product.SystemFileName, false))
+            string physicalPath = FileHelper.GetPhysicalFilePath(product);
+            _fileLoader.checkForFileErrorsFile(product.SystemFileNameWithExtension);
+            using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(product.SystemFileNameWithExtension, false))
             {
                 WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
                 foreach (WorksheetPart wsp in workbookPart.WorksheetParts)

@@ -47,6 +47,7 @@
     <Compile Include="ExcelHelpers.cs" />
     <Compile Include="ExcelParserException.cs" />
     <Compile Include="ExcelParserViaDomService.cs" />
+    <Compile Include="FileHelper.cs" />
     <Compile Include="FileLoader.cs" />
     <Compile Include="HomeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

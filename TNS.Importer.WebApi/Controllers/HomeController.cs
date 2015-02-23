@@ -12,7 +12,13 @@ namespace TNS.Importer.WebApi.Controllers
 {
     public class HomeController : Controller
     {
-        HomeService _svc = new HomeService();
+        IHomeService _svc;
+
+        public HomeController(IHomeService svc)
+        {
+            this._svc = svc;
+        }
+        
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
@@ -39,7 +45,9 @@ namespace TNS.Importer.WebApi.Controllers
             if (SaveFile(file, out originalFileName, out newFileName))
             {
                 product.OriginalFileName = originalFileName;
-                product.SystemFileName = newFileName;
+                product.SystemFileNameWithExtension = newFileName;
+                product.CurrentProcessingFolder = ConfigHelper.ToBeProcessedPath;
+               
                 _svc.ProcessUploadedFile(product);
             }
             return RedirectToAction("Product", product);
@@ -53,12 +61,12 @@ namespace TNS.Importer.WebApi.Controllers
 
         private bool SaveFile(HttpPostedFileBase file, out string originalFileName, out string newFilename)
         {
-            var physpath = Server.MapPath("/Uploads/ToBeProcessed/");
             FileInfo fi = new FileInfo(file.FileName);
-            string systemFileName = string.Concat(physpath, Guid.NewGuid(), fi.Extension);
-            file.SaveAs(systemFileName);
+            newFilename = string.Format("{0}{1}", Guid.NewGuid().ToString(), fi.Extension);
+            var physpath = Server.MapPath(Path.Combine(ConfigHelper.UploadFileRoot, ConfigHelper.ToBeProcessedPath, newFilename));
+            file.SaveAs(physpath);
             originalFileName = file.FileName;
-            newFilename = systemFileName;
+          
             return true;
         }
 

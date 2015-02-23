@@ -59,17 +59,10 @@ namespace TNS.Importer.Tests.Acceptance
             {
                 using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(product.SystemFileName, false))
                 {
-
-
                     WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
-
                     var sheetCount = workbookPart.Workbook.Sheets.Count();
-
-
-
                     foreach (WorksheetPart wsp in workbookPart.WorksheetParts)
                     {
-
                         var columnCount = wsp.Worksheet.Descendants<Column>().Count();
                         var rowCount = wsp.Worksheet.Descendants<Row>().Count();
                         var cellCount = wsp.Worksheet.Descendants<Cell>().Count();
@@ -82,8 +75,6 @@ namespace TNS.Importer.Tests.Acceptance
                             System.Diagnostics.Debug.WriteLine(text + "");
                         }
                     }
-
-
                 }
                 throw new NotImplementedException();
                 return default(Product);

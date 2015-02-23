@@ -134,3 +134,15 @@ C:\Projects\test\importer\TNS.Importer.WebApi\bin\TNS.Importer.Models.pdb
 C:\Projects\test\importer\TNS.Importer.WebApi\bin\TNS.Importer.Services.pdb
 C:\Projects\test\importer\TNS.Importer.WebApi\bin\TNS.Importer.ModelInterfaces.dll
 C:\Projects\test\importer\TNS.Importer.WebApi\bin\TNS.Importer.ModelInterfaces.pdb
+C:\Projects\test\importer\TNS.Importer.WebApi\bin\Autofac.dll
+C:\Projects\test\importer\TNS.Importer.WebApi\bin\Autofac.Integration.Mvc.dll
+C:\Projects\test\importer\TNS.Importer.WebApi\bin\Autofac.Integration.Mvc.Owin.dll
+C:\Projects\test\importer\TNS.Importer.WebApi\bin\Autofac.Integration.Owin.dll
+C:\Projects\test\importer\TNS.Importer.WebApi\bin\Autofac.Integration.WebApi.dll
+C:\Projects\test\importer\TNS.Importer.WebApi\bin\Autofac.Integration.WebApi.Owin.dll
+C:\Projects\test\importer\TNS.Importer.WebApi\bin\Autofac.xml
+C:\Projects\test\importer\TNS.Importer.WebApi\bin\Autofac.Integration.Mvc.xml
+C:\Projects\test\importer\TNS.Importer.WebApi\bin\Autofac.Integration.Mvc.Owin.xml
+C:\Projects\test\importer\TNS.Importer.WebApi\bin\Autofac.Integration.Owin.xml
+C:\Projects\test\importer\TNS.Importer.WebApi\bin\Autofac.Integration.WebApi.xml
+C:\Projects\test\importer\TNS.Importer.WebApi\bin\Autofac.Integration.WebApi.Owin.xml

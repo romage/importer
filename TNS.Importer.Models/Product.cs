@@ -23,8 +23,8 @@ namespace TNS.Importer.Models
         public string ProductName { get; set; }
 
         public string OriginalFileName { get; set; }
-
-        public string SystemFileName { get; set; }
+        public string SystemFileNameWithExtension { get; set; }
+        public string CurrentProcessingFolder { get; set; }
 
         public ProcessStateEnum ProcessState { get; set; }
         
