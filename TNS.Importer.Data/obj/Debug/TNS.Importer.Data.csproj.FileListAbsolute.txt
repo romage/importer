@@ -3,3 +3,15 @@ C:\Projects\test\TNS.Importer\TNS.Importer.Data\bin\Debug\TNS.Importer.Data.pdb
 C:\Projects\test\TNS.Importer\TNS.Importer.Data\obj\Debug\TNS.Importer.Data.csprojResolveAssemblyReference.cache
 C:\Projects\test\TNS.Importer\TNS.Importer.Data\obj\Debug\TNS.Importer.Data.dll
 C:\Projects\test\TNS.Importer\TNS.Importer.Data\obj\Debug\TNS.Importer.Data.pdb
+C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\TNS.Importer.Data.dll.config
+C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\TNS.Importer.Data.dll
+C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\TNS.Importer.Data.pdb
+C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\EntityFramework.dll
+C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\TNS.Importer.Interfaces.dll
+C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\TNS.Importer.Interfaces.pdb
+C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\EntityFramework.xml
+C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projects\test\importer\TNS.Importer.Data\obj\Debug\TNS.Importer.Data.csprojResolveAssemblyReference.cache
+C:\Projects\test\importer\TNS.Importer.Data\obj\Debug\TNS.Importer.Data.dll
+C:\Projects\test\importer\TNS.Importer.Data\obj\Debug\TNS.Importer.Data.pdb

@@ -61,7 +61,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Acceptance\Class1.cs" />
+    <Compile Include="Acceptance\FileHandling.cs" />
+    <Compile Include="Acceptance\FileLoaderTests.cs" />
     <Compile Include="Acceptance\Xml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -73,6 +74,16 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TNS.Importer.Models\TNS.Importer.Models.csproj">
+      <Project>{cbedb355-4bfd-4ebf-9607-bfe77fb0b3c0}</Project>
+      <Name>TNS.Importer.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TNS.Importer.Services\TNS.Importer.Services.csproj">
+      <Project>{88455da4-7209-42b0-aa73-1deeaddd87bf}</Project>
+      <Name>TNS.Importer.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

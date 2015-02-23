@@ -3,3 +3,8 @@ C:\Projects\test\TNS.Importer\TNS.Importer.Services\bin\Debug\TNS.Importer.Servi
 C:\Projects\test\TNS.Importer\TNS.Importer.Services\obj\Debug\TNS.Importer.Services.csprojResolveAssemblyReference.cache
 C:\Projects\test\TNS.Importer\TNS.Importer.Services\obj\Debug\TNS.Importer.Services.dll
 C:\Projects\test\TNS.Importer\TNS.Importer.Services\obj\Debug\TNS.Importer.Services.pdb
+C:\Projects\test\importer\TNS.Importer.Services\bin\Debug\TNS.Importer.Services.dll
+C:\Projects\test\importer\TNS.Importer.Services\bin\Debug\TNS.Importer.Services.pdb
+C:\Projects\test\importer\TNS.Importer.Services\obj\Debug\TNS.Importer.Services.csprojResolveAssemblyReference.cache
+C:\Projects\test\importer\TNS.Importer.Services\obj\Debug\TNS.Importer.Services.dll
+C:\Projects\test\importer\TNS.Importer.Services\obj\Debug\TNS.Importer.Services.pdb
