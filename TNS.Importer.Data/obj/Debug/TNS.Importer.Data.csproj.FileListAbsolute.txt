@@ -15,3 +15,5 @@ C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\EntityFramework.SqlServer.
 C:\Projects\test\importer\TNS.Importer.Data\obj\Debug\TNS.Importer.Data.csprojResolveAssemblyReference.cache
 C:\Projects\test\importer\TNS.Importer.Data\obj\Debug\TNS.Importer.Data.dll
 C:\Projects\test\importer\TNS.Importer.Data\obj\Debug\TNS.Importer.Data.pdb
+C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\TNS.Importer.Models.dll
+C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\TNS.Importer.Models.pdb

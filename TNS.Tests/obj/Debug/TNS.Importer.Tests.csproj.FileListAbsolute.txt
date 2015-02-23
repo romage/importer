@@ -40,3 +40,5 @@ C:\Projects\test\importer\TNS.Tests\bin\Debug\TNS.Importer.Models.dll
 C:\Projects\test\importer\TNS.Tests\bin\Debug\TNS.Importer.Services.dll
 C:\Projects\test\importer\TNS.Tests\bin\Debug\TNS.Importer.Models.pdb
 C:\Projects\test\importer\TNS.Tests\bin\Debug\TNS.Importer.Services.pdb
+C:\Projects\test\importer\TNS.Tests\bin\Debug\TNS.Importer.Interfaces.dll
+C:\Projects\test\importer\TNS.Tests\bin\Debug\TNS.Importer.Interfaces.pdb

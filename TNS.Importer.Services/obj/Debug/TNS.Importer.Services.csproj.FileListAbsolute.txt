@@ -8,3 +8,7 @@ C:\Projects\test\importer\TNS.Importer.Services\bin\Debug\TNS.Importer.Services.
 C:\Projects\test\importer\TNS.Importer.Services\obj\Debug\TNS.Importer.Services.csprojResolveAssemblyReference.cache
 C:\Projects\test\importer\TNS.Importer.Services\obj\Debug\TNS.Importer.Services.dll
 C:\Projects\test\importer\TNS.Importer.Services\obj\Debug\TNS.Importer.Services.pdb
+C:\Projects\test\importer\TNS.Importer.Services\bin\Debug\TNS.Importer.Interfaces.dll
+C:\Projects\test\importer\TNS.Importer.Services\bin\Debug\TNS.Importer.Interfaces.pdb
+C:\Projects\test\importer\TNS.Importer.Services\bin\Debug\TNS.Importer.Models.dll
+C:\Projects\test\importer\TNS.Importer.Services\bin\Debug\TNS.Importer.Models.pdb

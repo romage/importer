@@ -40,9 +40,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IEntity.cs" />
+    <Compile Include="IFileLoader.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="IScoreParser.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TNS.Importer.Models\TNS.Importer.Models.csproj">
+      <Project>{cbedb355-4bfd-4ebf-9607-bfe77fb0b3c0}</Project>
+      <Name>TNS.Importer.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

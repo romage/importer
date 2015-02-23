@@ -77,6 +77,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TNS.Importer.Interfaces\TNS.Importer.Interfaces.csproj">
+      <Project>{bb8b46d2-7482-4ce9-8cd7-436033d661c4}</Project>
+      <Name>TNS.Importer.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TNS.Importer.Models\TNS.Importer.Models.csproj">
       <Project>{cbedb355-4bfd-4ebf-9607-bfe77fb0b3c0}</Project>
       <Name>TNS.Importer.Models</Name>

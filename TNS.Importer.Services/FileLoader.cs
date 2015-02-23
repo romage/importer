@@ -4,10 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TNS.Importer.Interfaces;
 
 namespace TNS.Importer.Services
 {
-    public class FileLoader
+    public class FileLoader : IFileLoader
     {
         public FileInfo checkForFileErrorsFile(string physicalPath)
         {

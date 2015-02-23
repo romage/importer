@@ -15,8 +15,7 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using TNS.Importer.Models;
 using TNS.Importer.Services;
-
-
+using TNS.Importer.Interfaces;
 
 namespace TNS.Importer.Tests.Acceptance
 {
@@ -45,17 +44,12 @@ namespace TNS.Importer.Tests.Acceptance
         [Fact(DisplayName="xlsx file parsed via dom retuns product")]
         public void XlsxFileParsedViaDomReturnsProduct()
         {
-            ExcelParserViaDom domParser = new ExcelParserViaDom();
+            ExcelParserViaDomService domParser = new ExcelParserViaDomService(new FileLoader());
             var ret = domParser.Parse(_physicalFileName);
             Assert.IsType<Product>(ret);
         }
 
-
-        public interface IScoreParser
-        {
-            Product Parse(string physicalPath);
-        }
-
+       
 
         public class ExcelParserViaSax : IScoreParser
         {
@@ -94,103 +88,6 @@ namespace TNS.Importer.Tests.Acceptance
 
             }
         }
-
-        public class ExcelParserViaDom : IScoreParser
-        {
-            public Product Parse(string physicalPath)
-            {
-                var returnProduct = new Product();
-
-                //_fileLoader.checkForFileErrorsFile(_physicalFileName);
-                using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(physicalPath, false))
-                {
-                    WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
-                    WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
-
-                    string text = "";
-
-                    foreach (WorksheetPart wsp in workbookPart.WorksheetParts)
-                    {
-                        SheetData sheetData = wsp.Worksheet.Elements<SheetData>().First();
-
-                        foreach (Row row in sheetData.Elements<Row>())
-                        {
-                            checkInitialSpans(row);
-
-                            Score s = new Score();
-                            s.ScoreName = getScoreName(row, workbookPart);
-                            s.ScoreValue = getScoreValue(row);
-
-                            returnProduct.Scores.Add(s);
-                        }
-
-                    }
-
-                }
-                return returnProduct;
-            }
-
-            private double getScoreValue(Row r)
-            {
-                double cellValue = -1;
-                
-                Cell c = (Cell)r.ElementAt(1);
-                cellValue = double.Parse(c.CellValue.Text);
-                return cellValue;
-            }
-
-            private string getScoreName(Row r, WorkbookPart workbookPart)
-            {
-                string cellText = string.Empty;
-                Cell c = (Cell)r.ElementAt(0);
-                if (c != null && c.DataType != null && c.DataType == CellValues.SharedString)
-                {
-                    int id = -1;
-                    Int32.TryParse(c.InnerText, out id);
-                    var item = GetSharedStringItemById(workbookPart, id);
-                    if (item.Text != null)
-                    {
-                        cellText = item.Text.Text;
-                    }
-                    else if (item.InnerText != null)
-                    {
-                        cellText = item.InnerText;
-                    }
-                    else if (item.InnerXml != null)
-                    {
-                        cellText = item.InnerXml;
-                    }
-                }
-                return cellText;
-            }
-
-            private int checkInitialSpans(Row r)
-            {
-                string[] spans = r.Spans.InnerText.Split(':');
-
-                if(spans[0] != "1")
-                    throw new ExcelParserException("The first column should not be blank");
-
-                int endSpan= 1;
-                int.TryParse(spans[1], out endSpan);
-                if (endSpan < 2)
-                {
-                    throw new ExcelParserException("There should be at least two columns, with the second column holding the score");
-                }
-                return endSpan;
-            }
-        }
-
-        public class ExcelParserException : Exception 
-        {
-            public string ParseError { get; set; }
-            public ExcelParserException(string ParseError)
-            {
-                this.ParseError = ParseError;
-            }
-
-        }
-
         public class ExcelParserViaOld : IScoreParser
         {
             public Product Parse(string physicalPath)
@@ -215,10 +112,7 @@ namespace TNS.Importer.Tests.Acceptance
             }
         }
 
-        public static SharedStringItem GetSharedStringItemById(WorkbookPart workbookPart, int id)
-            {
-                return workbookPart.SharedStringTablePart.SharedStringTable.Elements<SharedStringItem>().ElementAt(id);
-            }
+       
 
     }
 }
