@@ -13,11 +13,10 @@ namespace TNS.Importer.Data
         IRepository<Product> _productRepo;
         UnitOfWork _uow;
 
-        public HomeRepository()
+        public HomeRepository(ImporterDataContext ctx)
         {
-            ImporterDataContext _ctx = new ImporterDataContext();
-            this._productRepo = new Repository<Product>(_ctx);
-            this._uow = new UnitOfWork(_ctx);
+            this._productRepo = new Repository<Product>(ctx);
+            this._uow = new UnitOfWork(ctx);
         }
 
         public Product SaveProduct(Product product)

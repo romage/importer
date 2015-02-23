@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TNS.Importer.Models;
+using System.Web;
+
 
 namespace TNS.Importer.Services
 {
     public class FileHelper
     {
+        
         public  static string GetPhysicalFilePath(Product product)
         {
             var root = ConfigHelper.UploadFileRoot;

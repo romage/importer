@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using TNS.Importer.Interfaces;
 
 namespace TNS.Importer.WebApi.Controllers
 {
@@ -15,6 +16,11 @@ namespace TNS.Importer.WebApi.Controllers
     [RoutePrefix("Values")]
     public class ValuesController : ApiController
     {
+        public ValuesController(IHomeService svc)
+        {
+
+        }
+
         [HttpPost]
         [Route("upload")]
         public async Task<HttpResponseMessage> PostFile()

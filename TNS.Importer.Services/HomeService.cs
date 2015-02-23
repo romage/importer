@@ -15,9 +15,9 @@ namespace TNS.Importer.Services
         IHomeRepository _repo;
        
         //TODO: add ioc container, and add the interface to the constructor
-        public HomeService()
+        public HomeService(IHomeRepository repo)
         {
-            _repo = new HomeRepository();
+           this._repo = repo;
         }
 
         public Product ProcessUploadedFile(Product product)

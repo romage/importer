@@ -17,6 +17,7 @@ using TNS.Importer.Models;
 using TNS.Importer.ModelInterfaces;
 using System.Web.Mvc;
 using System.Web.Http;
+using System.Reflection;
 
 
 
@@ -27,7 +28,7 @@ namespace TNS.Importer.WebApi.App_Start
         public static void Register(IAppBuilder app)
         { 
             var builder = new ContainerBuilder();
-            var WebApiApplication = typeof(TNS.Importer.WebApi.WebApiApplication).Assembly;
+            var WebApiApplication = Assembly.GetExecutingAssembly();
             var Services = typeof(TNS.Importer.Services.HomeService).Assembly;
 
             var config = new HttpConfiguration();
@@ -53,18 +54,18 @@ namespace TNS.Importer.WebApi.App_Start
                 .RegisterType<HomeRepository>()
                 .As<IHomeRepository>();
 
-            builder.RegisterControllers(WebApiApplication);
             builder.RegisterApiControllers(WebApiApplication);
+            builder.RegisterControllers(WebApiApplication);
             
             var container = builder.Build();
 
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+            GlobalConfiguration.Configuration.DependencyResolver =new AutofacWebApiDependencyResolver(container);
 
             app.UseAutofacMiddleware(container);
-            app.UseAutofacMvc();
             app.UseAutofacWebApi(config);
-            //.UseAutofacMvc();
-
+            app.UseWebApi(config);
+           
         }
     }
 }
