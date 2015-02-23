@@ -39,14 +39,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IEntity.cs" />
     <Compile Include="IFileLoader.cs" />
+    <Compile Include="IHomeRepository.cs" />
+    <Compile Include="IHomeService.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IScoreParser.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TNS.Importer.ModelInterfaces\TNS.Importer.ModelInterfaces.csproj">
+      <Project>{36f45896-ccff-40e0-9d8b-9c51137f8b8d}</Project>
+      <Name>TNS.Importer.ModelInterfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TNS.Importer.Models\TNS.Importer.Models.csproj">
       <Project>{cbedb355-4bfd-4ebf-9607-bfe77fb0b3c0}</Project>
       <Name>TNS.Importer.Models</Name>

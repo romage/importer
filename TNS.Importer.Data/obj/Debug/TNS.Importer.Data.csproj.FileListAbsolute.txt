@@ -17,3 +17,5 @@ C:\Projects\test\importer\TNS.Importer.Data\obj\Debug\TNS.Importer.Data.dll
 C:\Projects\test\importer\TNS.Importer.Data\obj\Debug\TNS.Importer.Data.pdb
 C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\TNS.Importer.Models.dll
 C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\TNS.Importer.Models.pdb
+C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\TNS.Importer.ModelInterfaces.dll
+C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\TNS.Importer.ModelInterfaces.pdb

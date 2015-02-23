@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,17 +46,29 @@
     <Compile Include="ExcelParserException.cs" />
     <Compile Include="ExcelParserViaDomService.cs" />
     <Compile Include="FileLoader.cs" />
+    <Compile Include="HomeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TNS.Importer.Data\TNS.Importer.Data.csproj">
+      <Project>{ccdb1315-d7fa-4fee-b8bd-44ffecbabf2c}</Project>
+      <Name>TNS.Importer.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TNS.Importer.Interfaces\TNS.Importer.Interfaces.csproj">
       <Project>{bb8b46d2-7482-4ce9-8cd7-436033d661c4}</Project>
       <Name>TNS.Importer.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TNS.Importer.ModelInterfaces\TNS.Importer.ModelInterfaces.csproj">
+      <Project>{36f45896-ccff-40e0-9d8b-9c51137f8b8d}</Project>
+      <Name>TNS.Importer.ModelInterfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\TNS.Importer.Models\TNS.Importer.Models.csproj">
       <Project>{cbedb355-4bfd-4ebf-9607-bfe77fb0b3c0}</Project>
       <Name>TNS.Importer.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

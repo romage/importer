@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TNS.Importer.Models;
 
 namespace TNS.Importer.Data
 {
@@ -13,7 +14,8 @@ namespace TNS.Importer.Data
             : base("DefaultConnection")
         {}
 
-
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Score> Scores { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

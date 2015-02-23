@@ -42,3 +42,9 @@ C:\Projects\test\importer\TNS.Tests\bin\Debug\TNS.Importer.Models.pdb
 C:\Projects\test\importer\TNS.Tests\bin\Debug\TNS.Importer.Services.pdb
 C:\Projects\test\importer\TNS.Tests\bin\Debug\TNS.Importer.Interfaces.dll
 C:\Projects\test\importer\TNS.Tests\bin\Debug\TNS.Importer.Interfaces.pdb
+C:\Projects\test\importer\TNS.Tests\bin\Debug\TNS.Importer.ModelInterfaces.dll
+C:\Projects\test\importer\TNS.Tests\bin\Debug\TNS.Importer.ModelInterfaces.pdb
+C:\Projects\test\importer\TNS.Tests\bin\Debug\TNS.Importer.Data.dll
+C:\Projects\test\importer\TNS.Tests\bin\Debug\EntityFramework.dll
+C:\Projects\test\importer\TNS.Tests\bin\Debug\TNS.Importer.Data.pdb
+C:\Projects\test\importer\TNS.Tests\bin\Debug\EntityFramework.xml

@@ -40,9 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProcessStateEnum.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Score.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TNS.Importer.ModelInterfaces\TNS.Importer.ModelInterfaces.csproj">
+      <Project>{36f45896-ccff-40e0-9d8b-9c51137f8b8d}</Project>
+      <Name>TNS.Importer.ModelInterfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -8,8 +8,6 @@ using TNS.Importer.Models;
 using TNS.Importer.Interfaces;
 using TNS.Importer.Services;
 
-
-
 namespace TNS.Importer.WebApi.Controllers
 {
     public class HomeController : Controller
@@ -17,7 +15,6 @@ namespace TNS.Importer.WebApi.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
-
             return View();
         }
 
@@ -37,10 +34,31 @@ namespace TNS.Importer.WebApi.Controllers
 
             var physpath = Server.MapPath("/Uploads/ToBeProcessed/");
             FileInfo fi = new FileInfo(file.FileName);
-            file.SaveAs(string.Concat(physpath, "newFileName", fi.Extension));
+            string systemFileName = string.Concat(physpath, Guid.NewGuid(), fi.Extension);
+            file.SaveAs(systemFileName);
+
+            FileLoader fl = new FileLoader();
+            ExcelParserViaDomService parser = new ExcelParserViaDomService(fl);
+            Product newProduct =  parser.Parse(systemFileName);
+
+            //TODO: refactor this depending on whether product data is got from the spreadsheet. may be better to pass in the product to the parser,  or just get the scores out of the spreadsheet
+            newProduct.DateOfScoreInput = DateTime.Today;
+            //newProduct.ProcessState = ProcessStateEnum.ToBeProcessed;
+            newProduct.OriginalFileName = fi.Name;
+            newProduct.SystemFileName = systemFileName;
+            newProduct.Scorer = product.Scorer;
+            newProduct.ProductName = product.ProductName;
+            newProduct.ScorerEmail = product.ScorerEmail;
+
+            newProduct.ProcessState = ProcessStateEnum.FinishedProcessing;
+            
+            //TODO: Move to ioc container, and constructor
+            HomeService hs = new HomeService();
+            hs.SaveProduct(newProduct);
           
             return View();
         }
+
 
 
 

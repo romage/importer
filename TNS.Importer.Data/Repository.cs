@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TNS.Importer.Interfaces;
+using TNS.Importer.ModelInterfaces;
 
 namespace TNS.Importer.Data
 {

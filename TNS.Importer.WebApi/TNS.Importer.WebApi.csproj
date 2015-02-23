@@ -320,6 +320,10 @@
       <Project>{bb8b46d2-7482-4ce9-8cd7-436033d661c4}</Project>
       <Name>TNS.Importer.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TNS.Importer.ModelInterfaces\TNS.Importer.ModelInterfaces.csproj">
+      <Project>{36f45896-ccff-40e0-9d8b-9c51137f8b8d}</Project>
+      <Name>TNS.Importer.ModelInterfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TNS.Importer.Models\TNS.Importer.Models.csproj">
       <Project>{cbedb355-4bfd-4ebf-9607-bfe77fb0b3c0}</Project>
       <Name>TNS.Importer.Models</Name>

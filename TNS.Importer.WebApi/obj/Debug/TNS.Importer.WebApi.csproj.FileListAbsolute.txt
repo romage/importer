@@ -132,3 +132,5 @@ C:\Projects\test\importer\TNS.Importer.WebApi\bin\TNS.Importer.Data.pdb
 C:\Projects\test\importer\TNS.Importer.WebApi\bin\TNS.Importer.Interfaces.pdb
 C:\Projects\test\importer\TNS.Importer.WebApi\bin\TNS.Importer.Models.pdb
 C:\Projects\test\importer\TNS.Importer.WebApi\bin\TNS.Importer.Services.pdb
+C:\Projects\test\importer\TNS.Importer.WebApi\bin\TNS.Importer.ModelInterfaces.dll
+C:\Projects\test\importer\TNS.Importer.WebApi\bin\TNS.Importer.ModelInterfaces.pdb

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TNS.Importer.Interfaces", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TNS.Importer.Models", "TNS.Importer.Models\TNS.Importer.Models.csproj", "{CBEDB355-4BFD-4EBF-9607-BFE77FB0B3C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TNS.Importer.ModelInterfaces", "TNS.Importer.ModelInterfaces\TNS.Importer.ModelInterfaces.csproj", "{36F45896-CCFF-40E0-9D8B-9C51137F8B8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{CBEDB355-4BFD-4EBF-9607-BFE77FB0B3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBEDB355-4BFD-4EBF-9607-BFE77FB0B3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBEDB355-4BFD-4EBF-9607-BFE77FB0B3C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36F45896-CCFF-40E0-9D8B-9C51137F8B8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36F45896-CCFF-40E0-9D8B-9C51137F8B8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36F45896-CCFF-40E0-9D8B-9C51137F8B8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36F45896-CCFF-40E0-9D8B-9C51137F8B8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
