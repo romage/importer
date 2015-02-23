@@ -15,6 +15,8 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using TNS.Importer.Models;
 using TNS.Importer.Services;
+using Moq;
+using TNS.Importer.Interfaces;
 
 
 
@@ -25,12 +27,25 @@ namespace TNS.Importer.Tests.Failure
     public class FileParsingTests
     {
 
-        [Fact(DisplayName = "Excel row, has only one span")]
-        public void XlsxFileParsedViaDomReturnsProduct()
-        {
-            //Moq<Row> getSpans = Moq.Match<Row>()
+        //[Fact(DisplayName = "Excel row, has only one span")]
+        //public void XlsxFileParsedViaDomReturnsProduct()
+        //{
+        //    Mock<Row> row = new Mock<Row>();
+        //    row.Setup(r => r.Spans.InnerText).Returns("1:2");
+        //    FileLoader fl = new FileLoader();
+
+        //    ExcelParserViaDomService parser = new ExcelParserViaDomService(fl);
+        //    int spans = parser.checkInitialSpans(row.Object);
+
+        //    Assert.Equal(1, spans);
+    
+
+        // unable to moq as this is not a virtual method. 
         
-        }
+        //}
+
+       
+
 
     }
 }

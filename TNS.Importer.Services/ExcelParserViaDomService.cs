@@ -45,7 +45,7 @@ namespace TNS.Importer.Services
         }
 
 
-        private int checkInitialSpans(Row r)
+        public int checkInitialSpans(Row r)
         {
             string[] spans = r.Spans.InnerText.Split(':');
 

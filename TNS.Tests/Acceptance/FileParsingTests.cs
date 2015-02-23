@@ -49,7 +49,6 @@ namespace TNS.Importer.Tests.Acceptance
             Assert.IsType<Product>(ret);
         }
 
-       
 
         public class ExcelParserViaSax : IScoreParser
         {
@@ -118,25 +117,22 @@ namespace TNS.Importer.Tests.Acceptance
 }
 
 
+//TODO: Register
+//TODO: Login
+//TODO: Autenticate
+//TODO: Sign in
+//TODO: Sign in
+//TODO: Sign in
+//TODO: Sign in
 
-// User can sign in. 
-// user is logged in
-
-
-// An Authenticated user is able to view upload page
-
-// User uploads a spreadsheet
-// Meta data is uploaded with the spreadsheet ? what additional data is required ? should there be an association with the a "product"
-// spreadsheet is "correctly" named
-// Spreadsheet is the correct format
+// Integration test as this will be handled by the controller (either webapi or mvc)
 // Uploaded spreadsheet is saved to the ToBeProcessedFolder
 
-// Spreadsheet Parsed and Processed
-// Use Xml (unzip the xlsx file)
-// Use OldDb 
-// Use SSIS
-// Use 
+//TODO: look at alternative spreadsheet parsing options. need to review real spread sheets to see whether oledb is required, or SAX would be faster. 
+//TODO: I don't think ssis is necessary, but to confirm Use SSIS
 // User third party software https://github.com/ExcelDataReader/ExcelDataReader
+
+//Integration test
 // Confirmation email sent confirming that this has taken place. 
 
 // How does this work in server farm environment? does it need to?

@@ -311,6 +311,24 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TNS.Importer.Data\TNS.Importer.Data.csproj">
+      <Project>{ccdb1315-d7fa-4fee-b8bd-44ffecbabf2c}</Project>
+      <Name>TNS.Importer.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TNS.Importer.Interfaces\TNS.Importer.Interfaces.csproj">
+      <Project>{bb8b46d2-7482-4ce9-8cd7-436033d661c4}</Project>
+      <Name>TNS.Importer.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TNS.Importer.Models\TNS.Importer.Models.csproj">
+      <Project>{cbedb355-4bfd-4ebf-9607-bfe77fb0b3c0}</Project>
+      <Name>TNS.Importer.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TNS.Importer.Services\TNS.Importer.Services.csproj">
+      <Project>{88455da4-7209-42b0-aa73-1deeaddd87bf}</Project>
+      <Name>TNS.Importer.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
