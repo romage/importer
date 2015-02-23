@@ -39,17 +39,19 @@ namespace TNS.Importer.Services
             }
             catch (Exception ex)
             {
-                moveFileToError(product);
+                moveFileToError(product, uploadRootPhysicalPath);
                 //logError();
                 throw ex;
             }
             return product;
         }
 
-        private void moveFileToError(Product product)
+        private void moveFileToError(Product product, string uploadRootPhysicalPath)
         {
-            FileInfo fi = new FileInfo(product.SystemFileNameWithExtension);
-            string newLocation = fi.FullName.Replace(ConfigHelper.ToBeProcessedPath, ConfigHelper.UnableToProcessPath); 
+            string existingPhysicalPath = FileHelper.GetPhysicalFilePath(uploadRootPhysicalPath, product);
+            string newLocation = existingPhysicalPath.Replace(ConfigHelper.ToBeProcessedPath, ConfigHelper.UnableToProcessPath);
+            // should the product be updated... it may have failed at the save which resulted in this code path. 
+            FileInfo fi = new FileInfo(existingPhysicalPath);
             fi.MoveTo(newLocation);
         }
 

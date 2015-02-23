@@ -46,64 +46,65 @@ namespace TNS.Importer.Tests.Acceptance
         {
             ExcelParserViaDomService domParser = new ExcelParserViaDomService(new FileLoader());
             Product product = new Product();
-            product.SystemFileName = "Book1.xlsx";
-            var ret = domParser.Parse(product);
+            product.SystemFileNameWithExtension = "fd5eb3be-54cd-4ed2-864e-c7b3ba6d7b88.xlsx";
+            product.CurrentProcessingFolder = "ToBeProcessed";
+            var ret = domParser.Parse(product, @"C:\Projects\test\importer\TNS.Importer.WebApi\Uploads");
             Assert.IsType<Product>(ret);
             Assert.True(ret.Scores.Count > 0);
         }
 
 
-        public class ExcelParserViaSax : IScoreParser
-        {
-            public Product Parse(Product product)
-            {
-                using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(product.SystemFileName, false))
-                {
-                    WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
-                    var sheetCount = workbookPart.Workbook.Sheets.Count();
-                    foreach (WorksheetPart wsp in workbookPart.WorksheetParts)
-                    {
-                        var columnCount = wsp.Worksheet.Descendants<Column>().Count();
-                        var rowCount = wsp.Worksheet.Descendants<Row>().Count();
-                        var cellCount = wsp.Worksheet.Descendants<Cell>().Count();
+        //public class ExcelParserViaSax : IScoreParser
+        //{
+        //    public Product Parse(Product product)
+        //    {
+        //        using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(product.SystemFileName, false))
+        //        {
+        //            WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
+        //            var sheetCount = workbookPart.Workbook.Sheets.Count();
+        //            foreach (WorksheetPart wsp in workbookPart.WorksheetParts)
+        //            {
+        //                var columnCount = wsp.Worksheet.Descendants<Column>().Count();
+        //                var rowCount = wsp.Worksheet.Descendants<Row>().Count();
+        //                var cellCount = wsp.Worksheet.Descendants<Cell>().Count();
 
-                        OpenXmlReader reader = OpenXmlReader.Create(wsp);
-                        string text;
-                        while (reader.Read())
-                        {
-                            text = reader.GetText();
-                            System.Diagnostics.Debug.WriteLine(text + "");
-                        }
-                    }
-                }
-                throw new NotImplementedException();
-                return default(Product);
+        //                OpenXmlReader reader = OpenXmlReader.Create(wsp);
+        //                string text;
+        //                while (reader.Read())
+        //                {
+        //                    text = reader.GetText();
+        //                    System.Diagnostics.Debug.WriteLine(text + "");
+        //                }
+        //            }
+        //        }
+        //        throw new NotImplementedException();
+        //        return default(Product);
 
-            }
-        }
-        public class ExcelParserViaOld : IScoreParser
-        {
-            public Product Parse(Product product)
-            {
-                string conStr = "Provider=Microsoft.ACE.OLEDB.12.0;data source='" + product.SystemFileName + "';Extended Properties=\"Excel 12.0;HDR=NO;IMEX=1\" ";
-                string cmd = "select * from [sheet1$]";
-                var dt = new DataTable();
+        //    }
+        //}
+        //public class ExcelParserViaOld : IScoreParser
+        //{
+        //    public Product Parse(Product product)
+        //    {
+        //        string conStr = "Provider=Microsoft.ACE.OLEDB.12.0;data source='" + product.SystemFileName + "';Extended Properties=\"Excel 12.0;HDR=NO;IMEX=1\" ";
+        //        string cmd = "select * from [sheet1$]";
+        //        var dt = new DataTable();
 
-                using (OleDbConnection cn = new OleDbConnection(conStr))
-                {
-                    cn.Open();
-                    DataTable schema = cn.GetSchema();
+        //        using (OleDbConnection cn = new OleDbConnection(conStr))
+        //        {
+        //            cn.Open();
+        //            DataTable schema = cn.GetSchema();
 
-                    using (OleDbDataAdapter ad = new OleDbDataAdapter(cmd, cn))
-                    {
-                        ad.Fill(dt);
-                        //return dt;
-                    }
-                }
-                throw new NotImplementedException();
-                return default(Product);
-            }
-        }
+        //            using (OleDbDataAdapter ad = new OleDbDataAdapter(cmd, cn))
+        //            {
+        //                ad.Fill(dt);
+        //                //return dt;
+        //            }
+        //        }
+        //        throw new NotImplementedException();
+        //        return default(Product);
+        //    }
+        //}
 
        
 

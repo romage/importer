@@ -91,3 +91,15 @@ C:\Projects\test\importer\TNS.Tests\bin\Debug\Microsoft.Owin.xml
 C:\Projects\test\importer\TNS.Tests\bin\Debug\Microsoft.Owin.Security.xml
 C:\Projects\test\importer\TNS.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 C:\Projects\test\importer\TNS.Tests\bin\Debug\System.Web.Http.Owin.xml
+C:\Projects\test\importer\TNS.Tests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projects\test\importer\TNS.Tests\bin\Debug\Autofac.dll
+C:\Projects\test\importer\TNS.Tests\bin\Debug\Autofac.Integration.WebApi.dll
+C:\Projects\test\importer\TNS.Tests\bin\Debug\Autofac.Integration.Mvc.dll
+C:\Projects\test\importer\TNS.Tests\bin\Debug\Autofac.Integration.Owin.dll
+C:\Projects\test\importer\TNS.Tests\bin\Debug\Autofac.Integration.WebApi.Owin.dll
+C:\Projects\test\importer\TNS.Tests\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projects\test\importer\TNS.Tests\bin\Debug\Autofac.xml
+C:\Projects\test\importer\TNS.Tests\bin\Debug\Autofac.Integration.WebApi.xml
+C:\Projects\test\importer\TNS.Tests\bin\Debug\Autofac.Integration.Mvc.xml
+C:\Projects\test\importer\TNS.Tests\bin\Debug\Autofac.Integration.Owin.xml
+C:\Projects\test\importer\TNS.Tests\bin\Debug\Autofac.Integration.WebApi.Owin.xml

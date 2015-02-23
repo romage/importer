@@ -19,3 +19,6 @@ C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\TNS.Importer.Models.dll
 C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\TNS.Importer.Models.pdb
 C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\TNS.Importer.ModelInterfaces.dll
 C:\Projects\test\importer\TNS.Importer.Data\bin\Debug\TNS.Importer.ModelInterfaces.pdb
+C:\Projects\test\importer\TNS.Importer.Data\obj\Debug\TNS.Importer.Data.Migrations.InitialCreate.resources
+C:\Projects\test\importer\TNS.Importer.Data\obj\Debug\TNS.Importer.Data.csproj.GenerateResource.Cache
+C:\Projects\test\importer\TNS.Importer.Data\obj\Debug\TNS.Importer.Data.Migrations.init.resources

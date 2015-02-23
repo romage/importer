@@ -7,6 +7,9 @@ using TNS.Importer.WebApi.Controllers;
 using Xunit;
 using System.Web.Mvc;
 using TNS.Importer.Models;
+using TNS.Importer.Interfaces;
+using TNS.Importer.Services;
+using TNS.Importer.Data;
 
 namespace TNS.Importer.Tests.Acceptance
 {
@@ -17,7 +20,9 @@ namespace TNS.Importer.Tests.Acceptance
         
         public HomeControllerTests()
         {
-            this._homeController = new HomeController();
+            ImporterDataContext idc = new ImporterDataContext();
+
+            this._homeController = new HomeController(new HomeService(new HomeRepository(idc), new ExcelParserViaDomService(new FileLoader())));
         }
 
         [Fact(DisplayName="Check the upload action return correct data model")]
