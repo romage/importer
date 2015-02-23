@@ -39,16 +39,15 @@ namespace TNS.Importer.WebApi.Controllers
             if (!ModelState.IsValid)
                 return View(product);
 
-            string originalFileName;
-            string newFileName;
-  
-            if (SaveFile(file, out originalFileName, out newFileName))
+            product.OriginalFileName = file.FileName;
+            product.ProcessState = ProcessStateEnum.ToBeProcessed;
+            product.CurrentProcessingFolder = ConfigHelper.ToBeProcessedPath;
+            
+            string UploadRootPhysical = Server.MapPath(Path.Combine("/", ConfigHelper.UploadFileRoot));
+
+            if (SaveFile(file, product, UploadRootPhysical))
             {
-                product.OriginalFileName = originalFileName;
-                product.SystemFileNameWithExtension = newFileName;
-                product.CurrentProcessingFolder = ConfigHelper.ToBeProcessedPath;
-               
-                _svc.ProcessUploadedFile(product);
+                _svc.ProcessUploadedFile(product, UploadRootPhysical);
             }
             return RedirectToAction("Product", product);
         }
@@ -59,13 +58,12 @@ namespace TNS.Importer.WebApi.Controllers
             return View(product);
         }
 
-        private bool SaveFile(HttpPostedFileBase file, out string originalFileName, out string newFilename)
+        private bool SaveFile(HttpPostedFileBase file, Product product, string uploadRootPhysical)
         {
             FileInfo fi = new FileInfo(file.FileName);
-            newFilename = string.Format("{0}{1}", Guid.NewGuid().ToString(), fi.Extension);
-            var physpath = Server.MapPath(Path.Combine(ConfigHelper.UploadFileRoot, ConfigHelper.ToBeProcessedPath, newFilename));
+            product.SystemFileNameWithExtension = string.Format("{0}{1}", Guid.NewGuid().ToString(), fi.Extension);
+            var physpath = FileHelper.GetPhysicalFilePath(uploadRootPhysical, product);
             file.SaveAs(physpath);
-            originalFileName = file.FileName;
           
             return true;
         }

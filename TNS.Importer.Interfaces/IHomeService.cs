@@ -9,7 +9,7 @@ namespace TNS.Importer.Interfaces
 {
     public interface IHomeService
     {
-        Product ProcessUploadedFile(Product product);
+        Product ProcessUploadedFile(Product product, string uploadRootPhysicalPath);
         Product SaveProduct(Product product);
         
     }

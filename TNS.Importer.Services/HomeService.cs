@@ -13,14 +13,16 @@ namespace TNS.Importer.Services
     public class HomeService: IHomeService
     {
         IHomeRepository _repo;
+        IScoreParser _parser;
        
         //TODO: add ioc container, and add the interface to the constructor
-        public HomeService(IHomeRepository repo)
+        public HomeService(IHomeRepository repo, IScoreParser parser)
         {
            this._repo = repo;
+           this._parser = parser;
         }
 
-        public Product ProcessUploadedFile(Product product)
+        public Product ProcessUploadedFile(Product product, string uploadRootPhysicalPath)
         {
             product.DateOfScoreInput = DateTime.Today;
             product.ProcessState = ProcessStateEnum.Processing;
@@ -29,9 +31,8 @@ namespace TNS.Importer.Services
 
             try
             {
-                FileLoader fl = new FileLoader();
-                ExcelParserViaDomService parser = new ExcelParserViaDomService(fl);
-                Product alt = parser.Parse(product);
+                //ExcelParserViaDomService parser = new ExcelParserViaDomService(fl);
+                Product alt = _parser.Parse(product, uploadRootPhysicalPath);
                 product.ProcessState = ProcessStateEnum.FinishedProcessing;
                 product.CurrentProcessingFolder = ConfigHelper.ProcessedPath;
                 _repo.SaveProduct(product);

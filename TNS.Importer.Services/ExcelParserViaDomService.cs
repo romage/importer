@@ -19,9 +19,9 @@ namespace TNS.Importer.Services
         }
         IFileLoader _fileLoader;
 
-        public Product Parse(Product product)
+        public Product Parse(Product product, string uploadRootPhysicalPath)
         {
-            string physicalPath = FileHelper.GetPhysicalFilePath(product);
+            string physicalPath = FileHelper.GetPhysicalFilePath(uploadRootPhysicalPath, product);
             _fileLoader.checkForFileErrorsFile(product.SystemFileNameWithExtension);
             using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(product.SystemFileNameWithExtension, false))
             {

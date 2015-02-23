@@ -54,6 +54,16 @@ namespace TNS.Importer.WebApi.App_Start
                 .RegisterType<HomeRepository>()
                 .As<IHomeRepository>();
 
+            builder
+                .RegisterType<FileLoader>()
+                .As<IFileLoader>();
+            
+            builder
+                .RegisterType<ExcelParserViaDomService>()
+                .As<IScoreParser>();
+
+
+
             builder.RegisterApiControllers(WebApiApplication);
             builder.RegisterControllers(WebApiApplication);
             
