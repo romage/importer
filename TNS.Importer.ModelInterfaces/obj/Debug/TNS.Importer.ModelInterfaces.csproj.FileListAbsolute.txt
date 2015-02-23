@@ -1,0 +1,4 @@
+C:\Projects\test\importer\TNS.Importer.ModelInterfaces\bin\Debug\TNS.Importer.ModelInterfaces.dll
+C:\Projects\test\importer\TNS.Importer.ModelInterfaces\bin\Debug\TNS.Importer.ModelInterfaces.pdb
+C:\Projects\test\importer\TNS.Importer.ModelInterfaces\obj\Debug\TNS.Importer.ModelInterfaces.dll
+C:\Projects\test\importer\TNS.Importer.ModelInterfaces\obj\Debug\TNS.Importer.ModelInterfaces.pdb
