@@ -121,6 +121,7 @@
     <Compile Include="Acceptance\HomeControllerTests.cs" />
     <Compile Include="Acceptance\HomeRepositoryTests.cs" />
     <Compile Include="Acceptance\HomeServiceTests.cs" />
+    <Compile Include="PlayTest\StoreAnalyticsTests.cs" />
     <Compile Include="Failure\FileParsingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
