@@ -16,6 +16,6 @@ namespace TNS.Importer.Interfaces
         T Add(T entity);
         T Update(T entity);
         void Delete(T entity);
-        void Dispose();
+        
     }
 }

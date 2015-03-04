@@ -5,3 +5,10 @@ C:\Projects\test\importer\TNS.Importer.Models\obj\Debug\TNS.Importer.Models.pdb
 C:\Projects\test\importer\TNS.Importer.Models\obj\Debug\TNS.Importer.Models.csprojResolveAssemblyReference.cache
 C:\Projects\test\importer\TNS.Importer.Models\bin\Debug\TNS.Importer.ModelInterfaces.dll
 C:\Projects\test\importer\TNS.Importer.Models\bin\Debug\TNS.Importer.ModelInterfaces.pdb
+C:\projects\importer\TNS.Importer.Models\bin\Debug\TNS.Importer.Models.dll
+C:\projects\importer\TNS.Importer.Models\bin\Debug\TNS.Importer.Models.pdb
+C:\projects\importer\TNS.Importer.Models\bin\Debug\TNS.Importer.ModelInterfaces.dll
+C:\projects\importer\TNS.Importer.Models\bin\Debug\TNS.Importer.ModelInterfaces.pdb
+C:\projects\importer\TNS.Importer.Models\obj\Debug\TNS.Importer.Models.csprojResolveAssemblyReference.cache
+C:\projects\importer\TNS.Importer.Models\obj\Debug\TNS.Importer.Models.dll
+C:\projects\importer\TNS.Importer.Models\obj\Debug\TNS.Importer.Models.pdb

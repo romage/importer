@@ -12,3 +12,12 @@ C:\Projects\test\importer\TNS.Importer.Interfaces\bin\Debug\TNS.Importer.Models.
 C:\Projects\test\importer\TNS.Importer.Interfaces\bin\Debug\TNS.Importer.Models.pdb
 C:\Projects\test\importer\TNS.Importer.Interfaces\bin\Debug\TNS.Importer.ModelInterfaces.dll
 C:\Projects\test\importer\TNS.Importer.Interfaces\bin\Debug\TNS.Importer.ModelInterfaces.pdb
+C:\projects\importer\TNS.Importer.Interfaces\bin\Debug\TNS.Importer.Interfaces.dll
+C:\projects\importer\TNS.Importer.Interfaces\bin\Debug\TNS.Importer.Interfaces.pdb
+C:\projects\importer\TNS.Importer.Interfaces\bin\Debug\TNS.Importer.ModelInterfaces.dll
+C:\projects\importer\TNS.Importer.Interfaces\bin\Debug\TNS.Importer.Models.dll
+C:\projects\importer\TNS.Importer.Interfaces\bin\Debug\TNS.Importer.ModelInterfaces.pdb
+C:\projects\importer\TNS.Importer.Interfaces\bin\Debug\TNS.Importer.Models.pdb
+C:\projects\importer\TNS.Importer.Interfaces\obj\Debug\TNS.Importer.Interfaces.csprojResolveAssemblyReference.cache
+C:\projects\importer\TNS.Importer.Interfaces\obj\Debug\TNS.Importer.Interfaces.dll
+C:\projects\importer\TNS.Importer.Interfaces\obj\Debug\TNS.Importer.Interfaces.pdb

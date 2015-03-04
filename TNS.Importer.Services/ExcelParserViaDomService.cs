@@ -30,21 +30,27 @@ namespace TNS.Importer.Services
                 {
                     SheetData sheetData = wsp.Worksheet.Elements<SheetData>().First();
 
+                    int spans = checkInitialSpans(sheetData.Elements<Row>().First());
+
                     foreach (Row row in sheetData.Elements<Row>())
                     {
-                        checkInitialSpans(row);
-                        Score s = new Score();
+                        //checkInitialSpans(row);
                         // workbook needs to be passed through as spreadsheet strings are not stored in the cell, but a separate lookup table.
-                        s.ScoreName = row.getScoreName(workbookPart);
-                        s.ScoreValue = row.getScoreValue();
-                        product.Scores.Add(s);
+                        var fred = row.getScoreId();
+                        for (var met = 2; met < spans; met++)
+                        {
+                            Score s = new Score();
+                            s.ScoreName = row.getScoreName(workbookPart);
+                            s.ScoreValue = row.getScoreValue(met);
+                            product.Scores.Add(s);
+                        }
                     }
                 }
             }
             return product;
         }
 
-
+        // spans should return something like 1:3 or 1:2 where 1 is the first columns with data (I think!)
         public int checkInitialSpans(Row r)
         {
             string[] spans = r.Spans.InnerText.Split(':');

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,6 +50,8 @@ namespace TNS.Importer.Tests.PlayTest
                                         .Where(e => e.StoreId.Equals(storeId, StringComparison.InvariantCultureIgnoreCase))
                                         .ToList();
             double storeCount = dataForStore.Count();
+            Debug.WriteLine("StoreCount:" + storeCount);
+            Trace.WriteLine("StoreCount:" + storeCount);
             double totalScoreForStores = dataForStore.Sum(d => d.Q1);
             double average = totalScoreForStores/storeCount;
             double storeAv = StoreAverage(storeId);

@@ -11,19 +11,28 @@ namespace TNS.Importer.Services
     public static class ExcelHelpers
     {
 
-        public static double getScoreValue(this Row r)
+        public static double getScoreValue(this Row r, int colId)
         {
             double cellValue = -1;
 
-            Cell c = (Cell)r.ElementAt(1);
+            Cell c = (Cell)r.ElementAt(colId);
             cellValue = double.Parse(c.CellValue.Text);
+            return cellValue;
+        }
+
+        public static int getScoreId(this Row r)
+        {
+            int cellValue = -1;
+
+            Cell c = (Cell)r.ElementAt(0);
+            cellValue = int.Parse(c.CellValue.Text);
             return cellValue;
         }
 
         public static string getScoreName(this Row r, WorkbookPart workbookPart)
         {
             string cellText = string.Empty;
-            Cell c = (Cell)r.ElementAt(0);
+            Cell c = (Cell)r.ElementAt(1);
             if (c != null && c.DataType != null && c.DataType == CellValues.SharedString)
             {
                 int id = -1;
